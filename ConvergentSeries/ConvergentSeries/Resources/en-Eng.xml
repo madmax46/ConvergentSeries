@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOneLineOfHelpList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OneLineOfHelpList>
+    <Function>+ − * /</Function>
+    <Description>Addition, subtraction, multiplication, division</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>( )</Function>
+    <Description>Grouping brackets</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>abs()</Function>
+    <Description>The absolute value of a number. </Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>pow(a, b) or ^</Function>
+    <Description>Degree of a number. For example, the expressions pow (2, 3) and 2 ^ 3 give 2 to the third power</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>sqrt()</Function>
+    <Description>Square root</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>sin()</Function>
+    <Description>sinus</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>cos()</Function>
+    <Description>cosine</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>tan()</Function>
+    <Description>Tangent</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>ctg()</Function>
+    <Description>Cotangent</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>asin()</Function>
+    <Description>Arcins</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>acos()</Function>
+    <Description>Arccosine</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>atan()</Function>
+    <Description>Arctangent</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>arctg()</Function>
+    <Description>Arccotangens</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>exp()</Function>
+    <Description>The degree of the number e</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>ln()</Function>
+    <Description>The natural logarithm of a number</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>log(a, b)</Function>
+    <Description>The logarithm of b on the basis of a</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>C</Function>
+    <Description>Clear all expression value</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>⇐</Function>
+    <Description>Clear priveous sign in expression value</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>n</Function>
+    <Description>Veriable in which the value n is substituted</Description>
+  </OneLineOfHelpList>
+  <OneLineOfHelpList>
+    <Function>pi</Function>
+    <Description>The number pi = 3,14159 ...</Description>
+  </OneLineOfHelpList>
+</ArrayOfOneLineOfHelpList>

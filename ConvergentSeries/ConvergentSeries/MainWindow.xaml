@@ -1,0 +1,136 @@
+﻿<Window x:Class="ConvergentSeries.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConvergentSeries"
+        mc:Ignorable="d"
+    Title="MainWindow" Height="600" Width="950" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="674*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="267*"/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu"  Background="#FFDDDDDD" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Header="File" Height="25" Width="60"  HorizontalContentAlignment="Center"  HorizontalAlignment="Center" Padding="15,0,0,0" TextBlock.TextAlignment="Right" >
+                <MenuItem Header="Save to txt" Click="menuItexSaveToTxt_Click" />
+                <MenuItem Header="Clear Description" Click="menuItemClearDescription_Click" />
+                <MenuItem Header="Exit" Click="MenuItemExit_Click" />
+            </MenuItem>
+            <MenuItem Header="Help" Height="25" Width="60"  HorizontalContentAlignment="Center" Padding="15,0,0,0"  HorizontalAlignment="Center" TextBlock.TextAlignment="Right" Click="MenuHelp_click"/>
+            <MenuItem Header="About" Height="25" Width="60"  HorizontalContentAlignment="Center" Padding="11,0,0,0" HorizontalAlignment="Center" TextBlock.TextAlignment="Right"  Click="MenuAbout_click"/>
+        </Menu>
+        <DockPanel LastChildFill="True" Margin="0,25,0,0" Grid.ColumnSpan="3">
+            <Border x:Name="RightPanel" DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="1" Width="267" Background="#FFF0F0F0" Panel.ZIndex="1">
+                <StackPanel   VerticalAlignment="Stretch" Orientation="Vertical" Margin="9,0,9,0">
+                    <StackPanel  Width="250" Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttonsinadd" Content="sin" Margin="0,0,0,0" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Sinus" Click="buttonvalueadd_Click" Tag="0"/>
+                        <Button x:Name="buttoncosadd" Content="cos" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Cosine" Tag="1" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttontanadd" Content="tan" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Tangent" Tag="2" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonctgadd" Content="ctg" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Cotangent" Tag="3" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonabsadd" Content="abs" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Absolute value |" Tag="4" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonasinadd" Content="asin" Margin="1,0,0,0" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Arc sinus" Tag="5" Click="buttonvalueadd_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttonacosadd" Content="acos" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Arc cosine" Tag="6" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonatanadd" Content="atan" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Arc tangent" Tag="7" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonarctgadd" Content="arctg" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Arc cotangent" Tag="8" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonexpadd" Content="exp" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Exponent" Tag="9" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonsqrtadd" Content="sqrt" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" RenderTransformOrigin="0.875,0.375" ToolTip="Square root" Tag="10" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonpiadd" Content="π" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="1,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Pi" Tag="11" Click="buttonvalueadd_Click"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttonpowadd" Content="x^y" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="power ^" Tag="12" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonlnadd" Content="ln" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Napierian logarithm" Tag="13" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonlogadd" Content="log" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Logarithm" Tag="14" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonlbracketgadd" Content="(" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Opening bracket (" Tag="15" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonrbracketgadd" Content=")" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Closing bracket )" Tag="16" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonnumnadd" Content="n" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="1,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="n" Tag="31" Click="buttonvalueadd_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttonsevenadd" Content="7" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Seven" Tag="17" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttoneightadd" Content="8" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Eight" Tag="18" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonnineadd" Content="9" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Nine" Tag="19" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonplusadd" Content="+" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Addition +" Tag="20" Click="buttonvalueadd_Click"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0"  >
+                            <Border BorderThickness="1" BorderBrush="Black">
+                                <Button x:Name="buttonrclearallgadd" BorderThickness="3"  Content="C" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Clear all" Tag="32" Click="buttonvalueclear_Click"/>
+                            </Border>
+                            <Border BorderThickness="1" BorderBrush="Black" Margin="1,0,0,0">
+                                <Button x:Name="buttonclearlastadd" Content="⇐" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Clear last symbol" Tag="33" Click="buttonvalueclear_Click"/>
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttonfouradd" Content="4" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Four" Tag="22" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonfiveadd" Content="5" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Five" Tag="23" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonsixadd" Content="6" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Six" Tag="24" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonsubtadd" Content="-" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Subtraction -" Tag="25" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonmultipadd" Content="×" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Multiplication *" Tag="21" Click="buttonvalueadd_Click"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                        <Button x:Name="buttononeadd" Content="1" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="One" Tag="27" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttontwoadd" Content="2" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Two" Tag="28" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonthreeadd" Content="3" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Three" Tag="29" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttonzeroadd" Content="0" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Zero" Tag="30" Click="buttonvalueadd_Click"/>
+                        <Button x:Name="buttondivadd" Content="/" Width="40" Height="40" Background="{x:Null}" BorderBrush="#FFF0F0F0" Margin="0,0,0,0" VerticalAlignment="Center" TextBlock.FontSize="15" ToolTip="Division /" Tag="26" Click="buttonvalueadd_Click"/>
+                    </StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="1"  Background="#FFF0F0F0" Height="96">
+                        <Grid Height="252">
+                            <StackPanel x:Name="gradationcriteriapanel" Orientation="Vertical">
+                                <Label x:Name="label1" Content="Gradation criteria:" Height="30" TextBlock.FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Right" Width="195" Margin="0,0,41,0"/>
+                                <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                                    <RadioButton x:Name="radiobitercount"  GroupName="gradationcriteria" Content="Iterations count" Margin="9,4,0,1" Width="140" IsChecked="True" TextBlock.FontSize="15" Checked="radiobitercount_Checked"  ></RadioButton>
+                                    <TextBox x:Name="textBoxIterationCount" Width="85" Margin="3,4,92,4" Text="20" TextAlignment="Right" TextChanged="textBoxIterationCount_TextChanged"   />
+                                </StackPanel>
+                                <StackPanel  Margin="0,0,0,0" Orientation="Horizontal">
+                                    <RadioButton x:Name="radiobaccuracy" GroupName="gradationcriteria" Content="Accuracy"  Width="140" Margin="9,4,0,0" TextBlock.FontSize="15" Checked="radiobaccuracy_Checked"/>
+                                    <TextBox Name="textBoxAccuracy" Width="85" Margin="3,4,92,4"  Text="0,001" TextAlignment="Right" TextChanged="textBoxAccuracy_TextChanged" IsEnabled="False"   />
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Border DockPanel.Dock="Left"    Background="#FFF0F0F0">
+                <Grid Background="#FFF0F0F0"  Margin="0,0,0,1" >
+                    <Label x:Name="labelS" Content="S = " Padding="10,0,0,0" TextBlock.FontSize="40" Margin="29,22,0,0" Height="55" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+                    <Label x:Name="labelΣ" Content="Σ" Padding="10,0,0,0" TextBlock.FontSize="60" Margin="95,10,0,0" Height="67" VerticalAlignment="Top" HorizontalAlignment="Left" Width="47"/>
+                    <TextBox x:Name="textBoxSeriesMember" TextWrapping="NoWrap"  Margin="142,32,126,0" Text="1/(n*(n+1))" TextAlignment="Left" FontSize="25" SelectionChanged="textBoxSeriesMember_SelectionChanged" TextChanged="textBoxSeriesMember_TextChanged" Height="42" VerticalAlignment="Top" MaxLines="1" />
+                    <Button x:Name="buttonSolve" Content="Solve" Margin="0,35,22,0" Height="35" VerticalAlignment="Top" Click="buttonSolve_click" HorizontalAlignment="Right" Width="99"/>
+                    <Label x:Name="labelNvalue" Content="n=" HorizontalAlignment="Left" Margin="90,64,0,0" VerticalAlignment="Top" Height="30" Width="27" TextBlock.FontSize="18"/>
+                    <TextBox x:Name="textBoxNvalue" TextAlignment="Center" Height="18" Margin="114,76,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="11" TextChanged="textBox_TextChanged" HorizontalAlignment="Left" Width="31" MaxLines="1" MaxLength="4"/>
+                    <ProgressBar x:Name="progBar" Height="26" Margin="10,0,22,10" VerticalAlignment="Bottom"/>
+                    <Label x:Name="Endofsumlabel" Content="∞" HorizontalAlignment="Left" Margin="109,7,0,0" VerticalAlignment="Top" Height="30" Width="27" TextBlock.FontSize="18"/>
+                    <TabControl x:Name="tabControl" Margin="10,104,22,41">
+                        <TabItem Header="Result">
+                            <Grid Background="#FFE5E5E5" Margin="0,0,-1,-2">
+                                <TextBlock x:Name="textBoxFullDescription"  TextWrapping="NoWrap" />
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Tracing members">
+                            <Grid Background="#FFF0F0F0">
+                                <DataGrid x:Name="TrasingResultsDataGrid" TextBlock.TextAlignment="Center"  SelectionUnit="CellOrRowHeader" RowHeaderWidth="15" IsReadOnly="True" Margin="0,32,0,0"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="406" Height="32" VerticalAlignment="Top" >
+                                    <Label x:Name="label" Content="Filter by member: from" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Height="31"/>
+                                    <TextBox x:Name="FilterMembertextBoxFrom" HorizontalAlignment="Left" Height="23"   Margin="0,4,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="FilterVlueChanged"/>
+                                    <Label x:Name="labelto" Content="to" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top"/>
+                                    <TextBox x:Name="FilterMembertextBoxTo" Height="23" Margin="0,4,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" TextChanged="FilterVlueChanged" HorizontalAlignment="Left" Width="120"/>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+
+                </Grid>
+            </Border>
+
+
+        </DockPanel>
+
+    </Grid>
+</Window>
